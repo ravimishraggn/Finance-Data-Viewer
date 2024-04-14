@@ -24,8 +24,6 @@ function FinanceDataGrid() {
   };
   const navigate = useNavigate();
   const handleRowDoubleClick = (row) => {
-    alert(`Row clicked: ${row.firm_name}`);
-    // Navigate to financeDataItem route with state row.firm_id
     navigate("/financeDataItem", { state: { firmId: row.firm_id } });
   };
 
