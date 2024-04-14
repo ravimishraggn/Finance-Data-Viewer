@@ -10,9 +10,12 @@ const initialState = {
 // Create the async thunk to fetch the finance data item
 export const fetchFinanceDataItem = createAsyncThunk(
   "financeDataItem/fetchFinanceDataItem",
-  async (id) => {
+  async (queryParams) => {
     try {
-      const response = await fetch("https://api.example.com/financial-data");
+      const baseUrl = "http://localhost:8000/api/investor/commitment";
+      const url = `${baseUrl}/${queryParams}`;
+      const response = await fetch(url);
+
       const data = await response.json();
       return data;
     } catch (error) {

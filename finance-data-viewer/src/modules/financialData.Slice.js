@@ -6,7 +6,7 @@ export const getFinancialData = createAsyncThunk(
   async () => {
     try {
       // Perform async operation to fetch financial data
-      const response = await fetch("https://api.example.com/financial-data");
+      const response = await fetch("http://localhost:8000/api/investors");
       const data = await response.json();
       return data;
     } catch (error) {
